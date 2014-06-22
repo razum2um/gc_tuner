@@ -16,8 +16,8 @@ Add my public key:
 
     gem cert --add <(curl -Ls https://raw.github.com/razum2um/gc_tuner/master/certs/razum2um.pem)
 
-    $ gem install lurker                 # without key
-    $ gem install lurker -P HighSecurity # secure, with key added
+    $ gem install gc_tuner                 # without key
+    $ gem install gc_tuner -P HighSecurity # secure, with key added
 
 Or this line to your application's Gemfile:
 
@@ -43,8 +43,8 @@ TODO: Write usage instructions here
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
 
-[Gem Version]: https://rubygems.org/gems/lurker
-[Build Status]: https://travis-ci.org/razum2um/lurker
+[Gem Version]: https://rubygems.org/gems/gc_tuner
+[Build Status]: https://travis-ci.org/razum2um/gc_tuner
 
 [GV img]: https://badge.fury.io/rb/gc_tuner.png
 [BS img]: https://travis-ci.org/razum2um/gc_tuner.png
