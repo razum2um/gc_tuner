@@ -1,10 +1,25 @@
 # GcTuner
 
-TODO: Write a gem description
+[![Gem Version][GV img]][Gem Version]
+[![Build Status][BS img]][Build Status]
+
+Ruby 2.1 has an improved GC with more sophisticated settings params (remember oldschool's REE)
+
+This gem is inspirated by
+
+- [@2kan's slides][http://www.slideshare.net/2kan/gc-in-ruby-rubyc-kiev-2014]
+- [@ko1's pdf][http://www.atdot.net/~ko1/activities/2014_rubyconf_ph_pub.pdf]
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add my public key:
+
+    gem cert --add <(curl -Ls https://raw.github.com/razum2um/gc_tuner/master/certs/razum2um.pem)
+
+    $ gem install lurker                 # without key
+    $ gem install lurker -P HighSecurity # secure, with key added
+
+Or this line to your application's Gemfile:
 
     gem 'gc_tuner'
 
@@ -22,8 +37,14 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/gc_tuner/fork )
+1. Fork it ( https://github.com/razum2um/gc_tuner/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+[Gem Version]: https://rubygems.org/gems/lurker
+[Build Status]: https://travis-ci.org/razum2um/lurker
+
+[GV img]: https://badge.fury.io/rb/gc_tuner.png
+[BS img]: https://travis-ci.org/razum2um/gc_tuner.png
