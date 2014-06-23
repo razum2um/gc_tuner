@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe 'GcTuner::GcConfig' do
-  it 'exists' do
-    expect(GcTuner::GcConfig).to be
+  subject { GcTuner::GcConfig.new }
+
+  it 'dumps method values' do
+    expect(subject.dump).to match /export RUBY_GC_INIT_SLOTS=/
   end
 end

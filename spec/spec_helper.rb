@@ -1,3 +1,6 @@
+ENV['RAILS_ENV'] ||= 'test'
+
+require 'pry-byebug' rescue nil
 require 'bundler/setup'
 require 'gc_tuner'
 

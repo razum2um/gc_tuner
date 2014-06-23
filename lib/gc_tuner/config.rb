@@ -3,7 +3,9 @@ module GcTuner
     MEGABYTE = 1048576
 
     def dump
-
+      config_methods.map do |m|
+        %Q{export #{capitalize(m)}="#{send(m)}"}
+      end.join("\n")
     end
 
     # How many slots prepared at initialize
@@ -38,6 +40,16 @@ module GcTuner
 
     def rails?
       defined? Rails
+    end
+
+    def config_methods
+      @config_methods ||= public_methods
+        .map(&:to_s)
+        .select { |m| m.match(/^ruby_gc_/) }
+    end
+
+    def capitalize(str)
+      str.gsub(/[a-z]/) { $&.capitalize }
     end
   end
 end

@@ -15,6 +15,11 @@ module GcTuner
       end
     end
 
+    def at_exit
+    end
+
+    private
+
     def minor_config
       File.expand_path("../gc_tuner/config#{RUBY_VERSION.split('.')[0..1].join}.rb", __FILE__)
     end
@@ -26,4 +31,10 @@ module GcTuner
 end
 
 GcTuner.setup
+
+unless ENV['RAILS_ENV'] == 'test'
+  at_exit do
+    GcTuner.at_exit
+  end
+end
 
