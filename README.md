@@ -9,6 +9,7 @@ This gem is inspirated by
 
 - [@2kan's slides][http://www.slideshare.net/2kan/gc-in-ruby-rubyc-kiev-2014]
 - [@ko1's pdf][http://www.atdot.net/~ko1/activities/2014_rubyconf_ph_pub.pdf]
+  See starting from 65'th slide
 
 ## Installation
 
