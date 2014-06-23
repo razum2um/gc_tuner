@@ -4,28 +4,16 @@ require "gc_tuner/config"
 module GcTuner
   class << self
     def setup
-      if File.exists? patch_config
-        require patch_config
-        true
-      elsif File.exists? minor_config
-        require minor_config
-        true
+      if RUBY_VERSION >= '2.1.1'
+        require 'gc_tuner/config211'
+      elsif RUBY_VERSION >= '2.1'
+        require 'gc_tuner/config21'
       else
-        false
+        require 'gc_tuner/config19'
       end
     end
 
     def at_exit
-    end
-
-    private
-
-    def minor_config
-      File.expand_path("../gc_tuner/config#{RUBY_VERSION.split('.')[0..1].join}.rb", __FILE__)
-    end
-
-    def patch_config
-      File.expand_path("../gc_tuner/config#{RUBY_VERSION.split('.').join}.rb", __FILE__)
     end
   end
 end
