@@ -1,6 +1,11 @@
 ENV['RAILS_ENV'] ||= 'test'
 
-require 'pry-byebug' rescue nil
+begin
+  require 'pry-byebug'
+rescue LoadError
+  nil
+end
+
 require 'bundler/setup'
 require 'gc_tuner'
 
