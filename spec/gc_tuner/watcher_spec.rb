@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'tempfile'
 
 describe 'GcTuner::Watcher' do
   let(:tmp_file) { Tempfile.new('watcher') }
